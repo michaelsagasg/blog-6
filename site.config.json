@@ -1,0 +1,16 @@
+{
+  "slug": "vendorcheckuk",
+  "name": "VendorCheckUK",
+  "tagline": "How to check a UK retatrutide or tirzepatide seller before you order, and what a legitimate listing looks like.",
+  "nav": [
+    { "label": "All articles", "short": "All", "href": "/archive/" }
+  ],
+  "banner": {
+    "enabled": true,
+    "headline": "Retatrutide and tirzepatide from Enzo Meds, with the COA on every listing.",
+    "button": "Shop Enzo Meds",
+    "url": "https://enzomeds.com",
+    "label": "",
+    "short": "Shop Enzo Meds"
+  }
+}

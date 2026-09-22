@@ -1,0 +1,21 @@
+---
+// A document/checklist outline with a circular verification stamp overlapping its corner.
+// Deliberately not blog-1's peptide chain, or the dose-ladder, insulated-box, graduated-
+// cylinder or dot-grid diary motifs used by the other blogs already built tonight.
+const lines = [80, 110, 140, 170, 200, 230, 260];
+---
+<svg class="hero-art" viewBox="0 0 380 400" aria-hidden="true" focusable="false">
+  <rect class="ha-doc" x="50" y="40" width="230" height="320" rx="6" fill="none" stroke-width="2.5" />
+  {lines.map((y, i) => (
+    <g>
+      <rect x="72" y={y} width="14" height="14" rx="2" class="ha-box" fill="none" stroke-width="2" />
+      {i % 2 === 0 && <path d={`M75 ${y + 7}l3 3 6 -6.5`} class="ha-check" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />}
+      <line x1="96" y1={y + 7} x2="256" y2={y + 7} class="ha-rule" />
+    </g>
+  ))}
+  <g transform="translate(258,270)">
+    <circle r="62" class="ha-stamp-ring" fill="none" stroke-width="4" />
+    <circle r="48" class="ha-stamp-ring-in" fill="none" stroke-width="1.6" stroke-dasharray="3 3" />
+    <path d="M-24 2l16 17 32 -38" class="ha-stamp-tick" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>
