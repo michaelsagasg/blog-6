@@ -13,7 +13,7 @@ const { posts } = Astro.props;
 ---
 <Base title={`Folder: ${folder}`}>
   <div class="wrap">
-    <section class="page-head"><h1>{folder}</h1><p>{posts.length} articles</p></section>
+    <section class="cover-head"><p class="cover-eyebrow">Folder</p><h1>{folder}</h1><p>{posts.length} articles</p></section>
     <PostList posts={posts} />
   </div>
 </Base>

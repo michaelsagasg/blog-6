@@ -39,7 +39,7 @@ const c = post.data.category;
   {related.length > 0 && (
     <section class="wrap related" aria-labelledby="keep">
       <h2 id="keep">Keep reading</h2>
-      <ul class="list cols three">{related.map((p) => <PostCard post={p} />)}</ul>
+      <ol class="list report">{related.map((p) => <PostCard post={p} />)}</ol>
     </section>
   )}
   <nav class="wrap pager" aria-label="More posts">
@@ -48,7 +48,15 @@ const c = post.data.category;
   </nav>
   {site.banner.enabled && (
     <div class="wrap end-shop">
-      <a class="btn-shop" href={bannerHref(site.banner.url)} rel="sponsored noopener">{site.banner.button} <span aria-hidden="true">→</span></a>
+      <a class="stamp-cta" href={bannerHref(site.banner.url)} rel="sponsored noopener">
+        <svg class="stamp-cta-ring" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <circle cx="24" cy="24" r="20" fill="none" stroke-width="2.5" />
+          <circle cx="24" cy="24" r="14.5" fill="none" stroke-width="1.2" stroke-dasharray="2.6 2.6" />
+          <path d="M15.5 24.5l5.5 6 12-14" fill="none" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="stamp-cta-text"><strong>{site.banner.button}</strong><small>Retatrutide and tirzepatide, COA on every listing</small></span>
+        <span class="stamp-cta-arrow" aria-hidden="true">→</span>
+      </a>
     </div>
   )}
 </Base>

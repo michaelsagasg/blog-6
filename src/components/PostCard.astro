@@ -5,9 +5,13 @@ const { post, level = 3, cat = true } = Astro.props;
 const c = post.data.category;
 const H = `h${level}` as 'h2' | 'h3';
 ---
-<li class={`item t-${catTone(c)}`} data-cat={c} data-text={`${post.data.title} ${post.data.description} ${c}`.toLowerCase()}>
-  {cat && <p class="kicker"><b>{catSymbol(c)}</b>{catLabel(c)}</p>}
-  <H><a href={postUrl(post)}>{post.data.title}</a></H>
-  <p class="desc">{post.data.description}</p>
-  <p class="meta"><time datetime={post.data.date.toISOString()}>{fmtDate(post.data.date)}</time> · {readingTime(post)} min read</p>
+<li class={`row t-${catTone(c)}`} data-cat={c} data-text={`${post.data.title} ${post.data.description} ${c}`.toLowerCase()}>
+  <span class="row-n" aria-hidden="true"></span>
+  {cat && <span class="row-cat"><b>{catSymbol(c)}</b>{catLabel(c)}</span>}
+  <span class="row-main">
+    <H><a href={postUrl(post)}>{post.data.title}</a></H>
+    <p class="row-desc">{post.data.description}</p>
+  </span>
+  <span class="row-tag">Reader guide</span>
+  <span class="row-meta"><time datetime={post.data.date.toISOString()}>{fmtDate(post.data.date)}</time> · {readingTime(post)} min</span>
 </li>

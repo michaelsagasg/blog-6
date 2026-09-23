@@ -13,12 +13,10 @@ const { posts } = Astro.props;
 ---
 <Base title={catLabel(category)} description={catBlurb(category)}>
   <div class="wrap">
-    <section class={`page-head has-el t-${catTone(category)}`}>
-      <span class="el el-static" aria-hidden="true"><span class="el-n">{posts.length}</span><span class="el-sym">{catSymbol(category)}</span></span>
-      <div>
-        <h1>{catLabel(category)}</h1>
-        <p>{catBlurb(category)} {posts.length} articles.</p>
-      </div>
+    <section class={`cover-head t-${catTone(category)}`}>
+      <p class="cover-eyebrow">Section <b>{catSymbol(category)}</b></p>
+      <h1>{catLabel(category)}</h1>
+      <p>{catBlurb(category)} {posts.length} articles.</p>
     </section>
     <PostList posts={posts} cat={false} />
   </div>

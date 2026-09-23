@@ -4,4 +4,4 @@ import type { Post } from '../lib/site';
 interface Props { posts: Post[]; cat?: boolean }
 const { posts, cat = true } = Astro.props;
 ---
-{posts.length > 0 ? <ul class="list cols three">{posts.map((p) => <PostCard post={p} cat={cat} />)}</ul> : <p class="empty">No posts yet.</p>}
+{posts.length > 0 ? <ol class="list report">{posts.map((p) => <PostCard post={p} cat={cat} />)}</ol> : <p class="empty">No posts yet.</p>}

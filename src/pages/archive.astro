@@ -7,7 +7,8 @@ const cats = countBy(posts, (p) => p.data.category);
 ---
 <Base title="All articles" description="Every article on the site. Search by keyword or filter by topic.">
   <div class="wrap library" data-filter-root>
-    <section class="page-head">
+    <section class="cover-head">
+      <p class="cover-eyebrow">Full index</p>
       <h1>All articles</h1>
       <p>{posts.length} guides. Search or filter by topic.</p>
     </section>
@@ -20,7 +21,7 @@ const cats = countBy(posts, (p) => p.data.category);
         <input type="search" data-search placeholder="Search all articles" aria-label="Search articles" autocomplete="off" />
       </form>
     </div>
-    <ul class="list cols three">{posts.map((p) => <PostCard post={p} />)}</ul>
+    <ol class="list report">{posts.map((p) => <PostCard post={p} />)}</ol>
     <p class="empty" data-empty hidden>No articles match that search. Try a different word.</p>
   </div>
 </Base>
