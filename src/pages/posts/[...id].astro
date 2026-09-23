@@ -36,16 +36,6 @@ const c = post.data.category;
       <a href={withBase(`/category/${c}/`)}>More in {catLabel(c)}</a>
     </p>
   </div>
-  {related.length > 0 && (
-    <section class="wrap related" aria-labelledby="keep">
-      <h2 id="keep">Keep reading</h2>
-      <ol class="list report">{related.map((p) => <PostCard post={p} />)}</ol>
-    </section>
-  )}
-  <nav class="wrap pager" aria-label="More posts">
-    {newer ? <a href={postUrl(newer)}><span>Newer</span>{newer.data.title}</a> : <span></span>}
-    {older ? <a class="next" href={postUrl(older)}><span>Older</span>{older.data.title}</a> : <span></span>}
-  </nav>
   {site.banner.enabled && (
     <div class="wrap end-shop">
       <a class="stamp-cta" href={bannerHref(site.banner.url)} rel="sponsored noopener">
@@ -59,4 +49,14 @@ const c = post.data.category;
       </a>
     </div>
   )}
+  {related.length > 0 && (
+    <section class="wrap related" aria-labelledby="keep">
+      <h2 id="keep">Keep reading</h2>
+      <ol class="list report">{related.map((p) => <PostCard post={p} />)}</ol>
+    </section>
+  )}
+  <nav class="wrap pager" aria-label="More posts">
+    {newer ? <a href={postUrl(newer)}><span>Newer</span>{newer.data.title}</a> : <span></span>}
+    {older ? <a class="next" href={postUrl(older)}><span>Older</span>{older.data.title}</a> : <span></span>}
+  </nav>
 </Base>
